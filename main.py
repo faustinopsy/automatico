@@ -4,6 +4,7 @@ import os
 from plyer import notification
 import winsound
 from gtts import gTTS
+from playsound import playsound
 
 def alerta_medicamento(nome_medicamento):
     notification.notify(
@@ -15,8 +16,8 @@ def alerta_medicamento(nome_medicamento):
     intro=f'Hora de tomar :{nome_medicamento}'
     language='pt'
     voz=gTTS(intro,lang=language,slow=False)
-    voz.save("bem_vindo.mp3")
-    os.system("start bem_vindo.mp3")
+    voz.save("voz.mp3")
+    playsound("voz.mp3")
     print(f'Notificação: {nome_medicamento}')
 
 #alerta_medicamento("teste de som, aqui")
