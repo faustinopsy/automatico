@@ -20,8 +20,8 @@ Este projeto é um agendador de medicamentos que exibe notificações e toca son
 
 1. Clone o repositório:
     ```bash
-    git clone https://github.com/seu-usuario/agendador-de-medicamentos.git
-    cd agendador-de-medicamentos
+    git clone https://github.com/faustinopsy/automatico.git
+    cd automatico
     ```
 
 2. Crie e ative um ambiente virtual:
