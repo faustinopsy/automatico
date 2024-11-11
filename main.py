@@ -26,6 +26,10 @@ def salvar_medicamentos(medicamentos, arquivo='medicamentos.txt'):
         for medicamento, horario in medicamentos.items():
             f.write(f'{medicamento},{horario}\n')
 
+
+
+
+
 #salvar_medicamentos({"para coluna": "20:55"})
 def carregar_medicamentos(arquivo='medicamentos.txt'):
     medicamentos = {}
@@ -35,6 +39,10 @@ def carregar_medicamentos(arquivo='medicamentos.txt'):
                 medicamento, horario = linha.strip().split(',')
                 medicamentos[medicamento] = horario
     return medicamentos
+
+
+
+
 
 #print(carregar_medicamentos())
 
@@ -48,6 +56,8 @@ def adicionar_medicamentos():
         if continuar.lower() != 's':
             break
     return medicamentos
+
+
 
 
 
