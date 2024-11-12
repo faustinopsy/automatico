@@ -26,11 +26,8 @@ def salvar_medicamentos(medicamentos, arquivo='medicamentos.txt'):
         for medicamento, horario in medicamentos.items():
             f.write(f'{medicamento},{horario}\n')
 
-
-
-
-
 #salvar_medicamentos({"para coluna": "20:55"})
+
 def carregar_medicamentos(arquivo='medicamentos.txt'):
     medicamentos = {}
     if os.path.exists(arquivo):
@@ -39,10 +36,6 @@ def carregar_medicamentos(arquivo='medicamentos.txt'):
                 medicamento, horario = linha.strip().split(',')
                 medicamentos[medicamento] = horario
     return medicamentos
-
-
-
-
 
 #print(carregar_medicamentos())
 
@@ -57,11 +50,6 @@ def adicionar_medicamentos():
             break
     return medicamentos
 
-
-
-
-
-
 if not os.path.exists('medicamentos.txt'):
     print('Arquivo de medicamentos não encontrado.')
     medicamentos = adicionar_medicamentos()
@@ -70,13 +58,10 @@ else:
     medicamentos = carregar_medicamentos()
 
 
-
-
 for medicamento, horario in medicamentos.items():
     schedule.every().day.at(horario).do(
         alerta_medicamento, nome_medicamento=medicamento
         )
-
 print('Agendador de medicamentos iniciado...')
 while True:
     schedule.run_pending()
